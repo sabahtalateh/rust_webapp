@@ -1,0 +1,15 @@
+name: webapp
+bin_name: backend
+author: Aleksandr Kravtsov <sabahtalateh@gmail.com>
+about: API server dlya podachi lolbas
+after_help: More info under the sea
+global_settings:
+  - ColoredHelp
+
+args:
+  - config:
+      default_value: Config.toml
+      env: CONFIG_FILE
+      help: Path to config file
+      short: c
+      value_name: PATH

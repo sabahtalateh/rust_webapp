@@ -1,0 +1,24 @@
+[package]
+name = "backend"
+version = "0.1.0"
+authors = ["Aleksandr Kravtsov <sabahtalateh@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "backend"
+path = "src/main.rs"
+
+[dependencies]
+actix = "0.8.3"
+actix-cors = "0.1.0"
+actix-web = { version = "1.0.8", features = ["ssl"] }
+clap = { version = "2.33.0", features = ["yaml"] }
+diesel = { version = "1.4.3", features = ["r2d2", "postgres"] }
+env_logger = "0.7.1"
+failure = "0.1.6"
+log = "0.4.8"
+num_cpus = "1.10.1"
+openssl = "0.10.25"
+r2d2 = "0.8.6"
+url = "2.1.0"
+webapp = { path = "..", version = "0.1.0" }

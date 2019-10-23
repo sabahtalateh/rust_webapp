@@ -1,0 +1,16 @@
+[server]
+url = "https://localhost:10080"
+cert = "tls/cert.pem"
+key = "tls/key.pem"
+redirect_from = []
+
+[log]
+actix_web = "debug"
+webapp = "trace"
+
+[postgres]
+host = "127.0.0.1"
+port = "54322"
+username = "webapp"
+password = "webapp"
+database = "webapp"
