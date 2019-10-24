@@ -1,5 +1,5 @@
 [server]
-url = "https://localhost:10080"
+url = "https://localhost:10101"
 cert = "tls/cert.pem"
 key = "tls/key.pem"
 redirect_from = [
