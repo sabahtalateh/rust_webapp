@@ -1,6 +1,2 @@
 /target
 **/*.rs.bk
-
-Config.toml
-docker/.env
-!docker/.env.dist

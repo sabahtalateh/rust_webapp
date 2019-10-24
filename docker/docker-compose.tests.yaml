@@ -1,0 +1,16 @@
+version: '3.0'
+
+services:
+  postgres_test:
+    build: './postgres'
+    ports:
+      - "54328:5432"
+    environment:
+      - POSTGRES_DB=webapp_test
+      - POSTGRES_USER=webapp_test
+      - POSTGRES_PASSWORD=webapp_test
+    networks:
+      - test
+
+networks:
+  test:

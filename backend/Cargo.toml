@@ -8,6 +8,10 @@ edition = "2018"
 name = "backend"
 path = "src/main.rs"
 
+[dev-dependencies]
+lazy_static = "1.4.0"
+reqwest = "0.9.22"
+
 [dependencies]
 actix = "0.8.3"
 actix-cors = "0.1.0"
@@ -16,6 +20,7 @@ clap = { version = "2.33.0", features = ["yaml"] }
 diesel = { version = "1.4.3", features = ["r2d2", "postgres"] }
 env_logger = "0.7.1"
 failure = "0.1.6"
+http = "0.1.19"
 log = "0.4.8"
 num_cpus = "1.10.1"
 openssl = "0.10.25"

@@ -1,9 +1,9 @@
-use actix::{SyncArbiter, SystemRunner};
+use actix::{SyncArbiter, SystemRunner, System};
 use actix_cors::Cors;
 use actix_web::{
     http::header::{CONTENT_TYPE, LOCATION},
     middleware,
-    web::get,
+    web::get, web::resource,
     App, HttpResponse, HttpServer,
 };
 use diesel::{r2d2::ConnectionManager, PgConnection};
@@ -20,7 +20,6 @@ use url::Url;
 use webapp::config::Config;
 
 use crate::database::DatabaseExecutor;
-use actix_web::web::resource;
 
 pub struct Server {
     config: Config,
@@ -28,8 +27,8 @@ pub struct Server {
     url: Url,
 }
 
-fn resp() -> HttpResponse {
-    HttpResponse::Ok().body("zozo")
+fn root() -> HttpResponse {
+    HttpResponse::Ok().body("OK")
 }
 
 impl Server {
@@ -59,7 +58,7 @@ impl Server {
                         .max_age(3600),
                 )
                 .wrap(middleware::Logger::default())
-                .route("/zozoz", get().to(resp))
+                .route("/", get().to(root))
         };
 
         let server = HttpServer::new(app);
